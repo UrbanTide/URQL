@@ -84,8 +84,17 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 - `matchphrase(property,valueA valueB ...)) ` - Matches objects where the specified property's value contains the exact phrase made up of comma-separated values
 - `matchphrase(property,valueA valueB ...,slopFactor)) ` - Matches objects where the specified property's value contains the comma-separated values in the order specified, but they may be separated by the slopFactor number of other words
 
-#### Spatial query
+#### Aggregation query
 
+- `count(property)` or `value_count(property)` - Count the number of occurrences of a property
+- `sum(property)` - Sum all values of this property
+- `avg(property)` - Calculate the average value of this property
+- `min(property)` - Find the minimum value of this property
+- `max(property)` - Find the maximum value of this property
+- `stats(property)` - Get a full statistical breakdown for this property (value_count, sum, avg, min, max)
+- `aggregate(groupingPropertyA,groupingPropertyB,...,operation(property))` - aggregate values of a property grouped by one or more other properties; for 'operation' use value_count, sum, avg, min, max 
+
+#### Spatial query
 - `withinBoundingBox(geometryProperty,(minX,maxX,minY,maxY)) ` - Filters for objects where the specified geometry property's coordinates fall completely within the bounding box as defined by minimum and maximum X and Y values
 
 #### Combining queries
