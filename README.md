@@ -106,7 +106,7 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 
 - `sort(+|-propertyA,+|-propertyB,...) ` - Sorts by the given property/properties in order specified by the prefix (+ for ascending, - for descending)
 - `select(property,property,...) ` - Trims each object down to the set of properties defined in the arguments
-- `limit(numberOfRecords,offset) ` - Returns the given range of objects from the result set (numberOfRecords = how many records should be returned, offset = how many records should be skipped)
+- `limit(numberOfRecords,offset) ` - Returns the given range of objects from the result set (numberOfRecords = how many records should be returned, offset = how many records should be skipped; to return a stream of all records call 'limit(-1)'.)
 
 ### More Examples
 TODO
