@@ -108,5 +108,8 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 - `select(property,property,...) ` - Trims each object down to the set of properties defined in the arguments
 - `limit(numberOfRecords,offset) ` - Returns the given range of objects from the result set (numberOfRecords = how many records should be returned, offset = how many records should be skipped; to return a stream of all records call 'limit(-1)'.)
 
+### Others
+- `format(ouputFormat) ` - Sets the output format - valid values are 'json' (default) and 'csv' (comma separated text file).
+
 ### More Examples
 TODO
