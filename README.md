@@ -92,7 +92,7 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 - `min(property)` - Find the minimum value of this property
 - `max(property)` - Find the maximum value of this property
 - `stats(property)` - Get a full statistical breakdown for this property (value_count, sum, avg, min, max)
-- `aggregate(groupingPropertyA,groupingPropertyB,...,operation(property),limit)` - aggregate values of a property grouped by one or more other properties; for 'operation' use value_count, sum, avg, min, max; to limit number of returned aggregate rows to top X set 'limit' to an integer (default value is 100000) 
+- `aggregate(groupingPropertyA,groupingPropertyB,...,operation(property),limit)` - aggregate values of a property grouped by one or more other properties; for 'operation' use value_count, sum, avg, min, max; if multiple operations are required, provide them in a comma separate list enclosed by brackets; to limit number of returned aggregate rows to top X set 'limit' to an integer (default value is 100000)
 
 #### Spatial query
 - `withinBoundingBox(geometryProperty,(minX,maxX,minY,maxY)) ` - Filters for objects where the specified geometry property's coordinates fall completely within the bounding box as defined by minimum and maximum X and Y values
