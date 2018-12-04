@@ -72,9 +72,9 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 - `eq(property,value) ` - Filters for objects where the specified property's value is equal to the provided value
 - `in(property,(valueA,valueB,...)) ` - Filters for objects where the specified property's value is in the comma-separated array of values
 - `lt(property,value) ` - Filters for objects where the specified property's value is less than the provided value
-- `le(property,value) ` - Filters for objects where the specified property's value is less than or equal to the provided value
+- `le(property,value,interval) ` - Filters for objects where the specified property's value is less than or equal to the provided value, can also accept date_math: (property,-1M,M)
 - `gt(property,value) ` - Filters for objects where the specified property's value is greater than the provided value
-- `ge(property,value) ` - Filters for objects where the specified property's value is greater than or equal to the provided value
+- `ge(property,value,interval) ` - Filters for objects where the specified property's value is greater than or equal to the provided value, can also accept date_math: (property,-1M,M)
 - `ne(property,value) ` - Filters for objects where the specified property's value is not equal to the provided value
 
 #### Freetext query
@@ -93,6 +93,12 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 - `max(property)` - Find the maximum value of this property
 - `stats(property)` - Get a full statistical breakdown for this property (value_count, sum, avg, min, max)
 - `aggregate(groupingPropertyA,groupingPropertyB,...,operation(property),limit)` - aggregate values of a property grouped by one or more other properties; for 'operation' use value_count, sum, avg, min, max; if multiple operations are required, provide them in a comma separate list enclosed by brackets; to limit number of returned aggregate rows to top X set 'limit' to an integer (default value is 100000)
+
+#### Special Operations
+
+- `date_histogram(date_field_name, interval, ...operation(property))` - date_histogram is a special operation that can be used inside an aggregation. It is native to elasticSearch: (https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-datehistogram-aggregation.html, "ElasticSearch Date_Histogram"), operation can be any of the above^
+
+- `serial_diff( integer )` - serial_diff can be a secondary operation used inside a date_histogram after one the above is used. This will use the value produced by the prior operation to create a difference in values. More information here:(https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-serialdiff-aggregation.html, "ElasticSearch Serial_Differencing")
 
 #### Spatial query
 - `withinBoundingBox(geometryProperty,(minX,maxX,minY,maxY)) ` - Filters for objects where the specified geometry property's coordinates fall completely within the bounding box as defined by minimum and maximum X and Y values
