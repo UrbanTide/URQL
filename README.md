@@ -72,9 +72,9 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 - `eq(property,value) ` - Filters for objects where the specified property's value is equal to the provided value
 - `in(property,(valueA,valueB,...)) ` - Filters for objects where the specified property's value is in the comma-separated array of values
 - `lt(property,value) ` - Filters for objects where the specified property's value is less than the provided value
-- `le(property,value,interval) ` - Filters for objects where the specified property's value is less than or equal to the provided value, can also accept date_math: (property,-1M,M)
+- `le(property,value,interval,,start_of_interval) ` - Filters for objects where the specified property's value is less than or equal to the provided value, can also accept date_math: (property,value,-1M,M)
 - `gt(property,value) ` - Filters for objects where the specified property's value is greater than the provided value
-- `ge(property,value,interval) ` - Filters for objects where the specified property's value is greater than or equal to the provided value, can also accept date_math: (property,-1M,M)
+- `ge(property,value,interval,start_of_interval) ` - Filters for objects where the specified property's value is greater than or equal to the provided value, can also accept date_math: (property,value,-1M,M)
 - `ne(property,value) ` - Filters for objects where the specified property's value is not equal to the provided value
 
 #### Freetext query
