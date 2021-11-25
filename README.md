@@ -116,6 +116,6 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 
 ### Others
 - `format(ouputFormat) ` - Sets the output format - valid values are 'json' (default) and 'csv' (comma separated text file).
-
+- `cache=true ` - Turn on cache option for this query
 ### More Examples
 TODO
