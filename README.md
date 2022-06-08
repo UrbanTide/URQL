@@ -87,7 +87,7 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 
 #### Aggregation query
 
-- `count(property)` or `value_count(property)` - Count the number of occurrences of a property
+- `value_count(property)` - Count the number of occurrences of a property
 - `sum(property)` - Sum all values of this property
 - `avg(property)` - Calculate the average value of this property
 - `min(property)` - Find the minimum value of this property
