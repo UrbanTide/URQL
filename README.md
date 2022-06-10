@@ -160,6 +160,7 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 
 - `sort(+|-propertyA,+|-propertyB,...) ` - Sorts by the given property/properties in order specified by the prefix (+ for ascending, - for descending)
   https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(100,0)&select(timestamp,speed)&sort(+speed)
+  
   https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(100,0)&select(timestamp,speed)&sort(-speed)
 - `select(property,property,...) ` - Trims each object down to the set of properties defined in the arguments
 
