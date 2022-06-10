@@ -99,7 +99,13 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 #### Freetext query
 
 - `re(property,value) ` - Filters for objects where the specified property's value is in the regular expression value
+
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&re(model,Isa.*)
+
 - `match(property,valueA valueB ...) ` - Matches objects where the specified property's value contains any of the provided, space separated, values (ordered by number of words matching)
+
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&match(model,Isacco)
+
 - `matchphrase(property,valueA valueB ...)) ` - Matches objects where the specified property's value contains the exact phrase made up of comma-separated values
 - `matchphrase(property,valueA valueB ...,slopFactor)) ` - Matches objects where the specified property's value contains the comma-separated values in the order specified, but they may be separated by the slopFactor number of other words
 
