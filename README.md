@@ -70,13 +70,31 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 #### Filter query
 
 - `eq(property,value) ` - Filters for objects where the specified property's value is equal to the provided value
+  
+    https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&eq(speed,10)
 - `in(property,(valueA,valueB,...)) ` - Filters for objects where the specified property's value is in the comma-separated array of values
+  
+    https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&in(type,(A,B))
 - `lt(property,value) ` - Filters for objects where the specified property's value is less than the provided value
+  
+    https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&lt(speed,10)
 - `le(property,value,interval,,start_of_interval) ` - Filters for objects where the specified property's value is less than or equal to the provided value, can also accept date_math: (property,value,-1M,M)
+  
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&le(speed,10)
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&le(timestamp,2019-06-01)
 - `gt(property,value) ` - Filters for objects where the specified property's value is greater than the provided value
+  
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&gt(speed,10)
 - `ge(property,value,interval,start_of_interval) ` - Filters for objects where the specified property's value is greater than or equal to the provided value, can also accept date_math: (property,value,-1M,M)
+  
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&ge(timestamp,2019-06-01)
+  
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&ge(speed,10)
 - `ne(property,value) ` - Filters for objects where the specified property's value is not equal to the provided value
+  
 - `exists(property) ` - Filters for objects where the specified property's value is not null or []
+  
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&exists(speed)
 
 #### Freetext query
 
@@ -88,16 +106,39 @@ We can also do multiple property sorts. To sort by price in ascending order and 
 #### Aggregation query
 
 - `value_count(property)` - Count the number of occurrences of a property
+
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&value_count(model)
+
 - `sum(property)` - Sum all values of this property
+
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&sum(speed)
+
 - `avg(property)` - Calculate the average value of this property
+
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&avg(speed)
+
 - `min(property)` - Find the minimum value of this property
+  
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&min(speed)
+  
 - `max(property)` - Find the maximum value of this property
+  
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&max(speed)
+
 - `stats(property)` - Get a full statistical breakdown for this property (value_count, sum, avg, min, max)
+  
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&stats(speed)
+
 - `aggregate(groupingPropertyA,groupingPropertyB,...,operation(property),limit)` - aggregate values of a property grouped by one or more other properties; for 'operation' use value_count, sum, avg, min, max; if multiple operations are required, provide them in a comma separate list enclosed by brackets; to limit number of returned aggregate rows to top X set 'limit' to an integer (default value is 100000)
+
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&aggregate(type,value_count(speed))
+
 
 #### Special Operations
 
 - `date_histogram(date_field_name, interval, ...operation(property))` - date_histogram is a special operation that can be used inside an aggregation. It is native to elasticSearch: (https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-bucket-datehistogram-aggregation.html, "ElasticSearch Date_Histogram"), operation can be any of the above^
+
+  https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&date_histogram(timestamp,day,value_count(speed))
 
 - `serial_diff( integer )` - serial_diff can be a secondary operation used inside a date_histogram after one the above is used. This will use the value produced by the prior operation to create a difference in values. More information here:(https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations-pipeline-serialdiff-aggregation.html, "ElasticSearch Serial_Differencing")
 
