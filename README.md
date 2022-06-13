@@ -90,7 +90,6 @@ We can also do multiple property sorts. To sort by price in ascending order and 
   https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&ge(timestamp,2019-06-01)
   
   https://api.usmart.io/org/28ccd497-7cad-4470-bd17-721d5cbbd6ef/ebaa48b2-d69f-4092-b3bc-cd3913dfba97/latest/urql?limit(10,0)&ge(speed,10)
-- `ne(property,value) ` - Filters for objects where the specified property's value is not equal to the provided value
   
 - `exists(property) ` - Filters for objects where the specified property's value is not null or []
   
